@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/splashScreen/splash_Screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MyApp());
+  await Firebase.initializeApp();
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
   final Widget? child;
 
-  MyApp({this.child});
+  const MyApp({super.key, this.child});
 
   @override
   _MyAppState createState() => _MyAppState();
@@ -23,11 +26,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("aaa"),
-        ),
-      ),
+      home: const MySplashScreen(),
     );
   }
 }

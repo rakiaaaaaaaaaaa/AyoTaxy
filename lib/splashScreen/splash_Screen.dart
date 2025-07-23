@@ -18,7 +18,35 @@ class _MySplashScreenState extends State<MySplashScreen> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    startTimer();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container();
+    return Material(
+      color: Colors.black,
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              "images/logo1.png",
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const Text(
+              "Welcome to AyoTaxy",
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
